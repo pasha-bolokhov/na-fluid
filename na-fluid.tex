@@ -1,0 +1,588 @@
+\documentclass[epsfig,12pt]{article}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{geometry}
+\geometry{letterpaper}
+\usepackage{color}
+\usepackage{bm}
+\usepackage{slashed}
+\usepackage{showlabels}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                              %
+%                                                                              %
+%                     D O C U M E N T   S E T T I N G S                        %
+%                                                                              %
+%                                                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\baselinestretch{1.1}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+\hyphenation{con-fi-ning}
+\hyphenation{Cou-lomb}
+\hyphenation{Yan-ki-e-lo-wicz}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                              %
+%                                                                              %
+%                      C O M M O N   D E F I N I T I O N S                     %
+%                                                                              %
+%                                                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+\def\nn{\nonumber}
+\def\ba{\beq\new\begin{array}{c}}
+\def\ea{\end{array}\eeq}
+\def\be{\ba}
+\def\ee{\ea}
+
+
+\newcommand{\nfour}{${\cal N}=4\;$}
+\newcommand{\none}{${\mathcal N}=1\,$}
+\newcommand{\nonen}{${\mathcal N}=1$}
+\newcommand{\ntwo}{${\mathcal N}=2$}
+\newcommand{\ntt}{${\mathcal N}=(2,2)\,$}
+\newcommand{\nzt}{${\mathcal N}=(0,2)\,$}
+\newcommand{\ntwon}{${\mathcal N}=2$}
+\newcommand{\ntwot}{${\mathcal N}= \left(2,2\right) $ }
+\newcommand{\ntwoo}{${\mathcal N}= \left(0,2\right) $ }
+\newcommand{\ntwoon}{${\mathcal N}= \left(0,2\right)$}
+
+
+\newcommand{\ca}{{\mathcal A}}
+\newcommand{\cell}{{\mathcal L}}
+\newcommand{\cw}{{\mathcal W}}
+\newcommand{\cs}{{\mathcal S}}
+\newcommand{\vp}{\varphi}
+\newcommand{\pt}{\partial}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\gs}{g^{2}}
+\newcommand{\zn}{$Z_N$}
+\newcommand{\cd}{${\mathcal D}$}
+\newcommand{\cde}{{\mathcal D}}
+\newcommand{\cf}{${\mathcal F}$}
+\newcommand{\cfe}{{\mathcal F}}
+\newcommand{\ff}{\mc{F}}
+\newcommand{\bff}{\ov{\mc{F}}}
+
+
+\newcommand{\p}{\partial}
+\newcommand{\wt}{\widetilde}
+\newcommand{\ov}{\overline}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\md}{\mathcal{D}}
+\newcommand{\ml}{\mathcal{L}}
+\newcommand{\mw}{\mathcal{W}}
+\newcommand{\ma}{\mathcal{A}}
+
+
+\newcommand{\GeV}{{\rm GeV}}
+\newcommand{\eV}{{\rm eV}}
+\newcommand{\Heff}{{\mathcal{H}_{\rm eff}}}
+\newcommand{\Leff}{{\mathcal{L}_{\rm eff}}}
+\newcommand{\el}{{\rm EM}}
+\newcommand{\uflavor}{\mathbf{1}_{\rm flavor}}
+\newcommand{\lgr}{\left\lgroup}
+\newcommand{\rgr}{\right\rgroup}
+
+
+\newcommand{\Mpl}{M_{\rm Pl}}
+\newcommand{\suc}{{{\rm SU}_{\rm C}(3)}}
+\newcommand{\sul}{{{\rm SU}_{\rm L}(2)}}
+\newcommand{\sutw}{{\rm SU}(2)}
+\newcommand{\suth}{{\rm SU}(3)}
+\newcommand{\ue}{{\rm U}(1)}
+
+
+\newcommand{\LN}{\Lambda_\text{SU($N$)}}
+\newcommand{\sunu}{{\rm SU($N$) $\times$ U(1) }}
+\newcommand{\sunun}{{\rm SU($N$) $\times$ U(1)}}
+\def\cfl {$\text{SU($N$)}_{\rm C+F}$ }
+\def\cfln {$\text{SU($N$)}_{\rm C+F}$}
+\newcommand{\mUp}{m_{\rm U(1)}^{+}}
+\newcommand{\mUm}{m_{\rm U(1)}^{-}}
+\newcommand{\mNp}{m_\text{SU($N$)}^{+}}
+\newcommand{\mNm}{m_\text{SU($N$)}^{-}}
+\newcommand{\AU}{\mc{A}^{\rm U(1)}}
+\newcommand{\AN}{\mc{A}^\text{SU($N$)}}
+\newcommand{\aU}{a^{\rm U(1)}}
+\newcommand{\aN}{a^\text{SU($N$)}}
+\newcommand{\baU}{\ov{a}{}^{\rm U(1)}}
+\newcommand{\baN}{\ov{a}{}^\text{SU($N$)}}
+\newcommand{\lU}{\lambda^{\rm U(1)}}
+\newcommand{\lN}{\lambda^\text{SU($N$)}}
+\newcommand{\bxir}{\ov{\xi}{}_R}
+\newcommand{\bxil}{\ov{\xi}{}_L}
+\newcommand{\xir}{\xi_R}
+\newcommand{\xil}{\xi_L}
+\newcommand{\bzl}{\ov{\zeta}{}_L}
+\newcommand{\bzr}{\ov{\zeta}{}_R}
+\newcommand{\zr}{\zeta_R}
+\newcommand{\zl}{\zeta_L}
+\newcommand{\nbar}{\ov{n}}
+\newcommand{\nnbar}{n\ov{n}}
+\newcommand{\muU}{\mu_\text{U}}
+
+
+\newcommand{\cpn}{CP$^{N-1}$\,}
+\newcommand{\CPC}{CP($N-1$)$\times$C }
+\newcommand{\CPCn}{CP($N-1$)$\times$C}
+
+
+\newcommand{\lar}{\lambda_R}
+\newcommand{\lal}{\lambda_L}
+\newcommand{\larl}{\lambda_{R,L}}
+\newcommand{\lalr}{\lambda_{L,R}}
+\newcommand{\blar}{\ov{\lambda}{}_R}
+\newcommand{\blal}{\ov{\lambda}{}_L}
+\newcommand{\blarl}{\ov{\lambda}{}_{R,L}}
+\newcommand{\blalr}{\ov{\lambda}{}_{L,R}}
+
+
+\newcommand{\bgamma}{\ov{\gamma}}
+\newcommand{\bpsi}{\ov{\psi}{}}
+\newcommand{\bphi}{\ov{\phi}{}}
+\newcommand{\bxi}{\ov{\xi}{}}
+
+
+\newcommand{\qt}{\wt{q}}
+\newcommand{\bq}{\ov{q}}
+\newcommand{\bqt}{\overline{\widetilde{q}}}
+
+
+\newcommand{\eer}{\epsilon_R}
+\newcommand{\eel}{\epsilon_L}
+\newcommand{\eerl}{\epsilon_{R,L}}
+\newcommand{\eelr}{\epsilon_{L,R}}
+\newcommand{\beer}{\ov{\epsilon}{}_R}
+\newcommand{\beel}{\ov{\epsilon}{}_L}
+\newcommand{\beerl}{\ov{\epsilon}{}_{R,L}}
+\newcommand{\beelr}{\ov{\epsilon}{}_{L,R}}
+
+
+\newcommand{\bi}{{\bar \imath}}
+\newcommand{\bj}{{\bar \jmath}}
+\newcommand{\bk}{{\bar k}}
+\newcommand{\bl}{{\bar l}}
+\newcommand{\bmm}{{\bar m}}
+
+
+\newcommand{\nz}{{n^{(0)}}}
+\newcommand{\no}{{n^{(1)}}}
+\newcommand{\bnz}{{\ov{n}{}^{(0)}}}
+\newcommand{\bno}{{\ov{n}{}^{(1)}}}
+\newcommand{\Dz}{{D^{(0)}}}
+\newcommand{\Do}{{D^{(1)}}}
+\newcommand{\bDz}{{\ov{D}{}^{(0)}}}
+\newcommand{\bDo}{{\ov{D}{}^{(1)}}}
+\newcommand{\sigz}{{\sigma^{(0)}}}
+\newcommand{\sigo}{{\sigma^{(1)}}}
+\newcommand{\bsigz}{{\ov{\sigma}{}^{(0)}}}
+\newcommand{\bsigo}{{\ov{\sigma}{}^{(1)}}}
+
+
+\newcommand{\rrenz}{{r_\text{ren}^{(0)}}}
+\newcommand{\bren}{{\beta_\text{ren}}}
+
+
+\newcommand{\Tr}{\text{Tr}}
+\newcommand{\Ts}{\text{Ts}}
+\newcommand{\dm}{\hat{{\scriptstyle \Delta} m}}
+\newcommand{\dmdag}{\hat{{\scriptstyle \Delta} m}{}^\dag}
+\newcommand{\mhat}{\widehat{m}}
+\newcommand{\deltam}{{\scriptstyle \Delta} m}
+\newcommand{\nvac}{\vec{n}{}_\text{vac}}
+
+
+\newcommand{\ie}{{\it i.e.}~}
+\newcommand{\eg}{{\it e.g.}~}
+\newcommand{\ansatz}{{\it ansatz} }
+
+
+
+
+\begin{document}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                              %
+%                                                                              %
+%                            T I T L E   P A G E                               %
+%                                                                              %
+%                                                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+
+
+\begin{center}
+{  \Large \bf  A Model of Non-Abelian Magnetohydrodynamics}
+\end{center}
+
+\vspace{2mm}
+
+
+\end{titlepage}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                              %
+%                                                                              %
+%                            I N T R O D U C T I O N                           %
+%                                                                              %
+%                                                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\setcounter{equation}{0}
+
+	Consider a Lagrangian which would roughly form a generalization of the Clebsch parametrization,
+\beq
+\label{lagrangian}
+	\ml    ~~=~~    2\, \Tr\, J_\mu\,  \md^{\text{A}\mu} \theta   ~~-~~  f(n)  ~~+~~
+			\frac{1}{2}\, \Tr\, G_{\mu\nu}^2\,.
+\eeq
+	Here,
+\beq
+	J_\mu    ~~=~~    J_\mu^a\, T^a
+\eeq
+	is the non-Abelian current,
+\beq
+	\md^\text{A}_\mu    ~~=~~    \p_\mu  ~~+~~  [ A_\mu\,, \cdot\,\, ]
+\eeq
+	is the gauge derivative in the adjoint representation,
+\beq
+	\theta    ~~=~~    \theta^a\, T^a
+\eeq
+	is the analogue of the Clebsch potential,
+\beq
+	f(n)\,, \qquad\qquad n ~=~ \sqrt{ J_\mu^a\, J^{\mu a} }
+\eeq
+	is a function determining the dynamics of the fluid (interactions and so on),
+	and
+\beq
+	G_{\mu\nu}    ~~=~~    \p_{[\mu} A_{\nu]}  ~~+~~ [ A_\mu\, A_\nu ]
+\eeq
+	is the gluon field strength.
+%%	The derivative in square brackets $ [\, \md^\mu\, \underline{~~}\, ] $ is just a derivative
+%%	acting in the adjoint representation.
+
+	Unlike QED, where the current is gauge invariant, in a non-Abelian theory, both $ J_\mu $
+	and $ \theta $ must transform as adjoints of SU($N$).
+
+
+	The equations of motion for Eq.~\eqref{lagrangian} are
+\begin{align}
+%
+\label{cconserv}
+	\md^\text{A}_\mu\, J^\mu     & ~~=~~    0\,,
+	\\[3.4mm]
+%
+\label{maxwell}
+	\md^\text{A}_\mu\, G^{\mu\nu}     & ~~=~~    [\, \theta\, J^\nu \,]\,,
+	\\[2mm]
+%
+\label{flow}
+	\md^\text{A}_\mu\, \theta     & ~~=~~    \frac{1}{n}\, f^\prime(n)\, J_\mu\,.
+\end{align}
+	The first equation is just the covariant conservation of the current $ J^\mu $.
+	The second equation --- the Maxwell equation --- immediately implies the conservation
+	of another current
+\beq
+\label{aconserv}
+	\md^\text{A}_\mu\, \big[\, \theta\, J^\mu \,\big]    ~~=~~    0\,.
+\eeq
+	Although one can use the continuity equation \eqref{cconserv} here, it does not mean
+	that $ \md^\text{A}_\mu\, \theta  \,=\, 0 $.
+	Instead, as Eq.~\eqref{flow} shows, this gradient is proportional to the current,
+        and so commutes with it.
+	The current in \eqref{aconserv} is the one that the gluons actually see.
+	Although it differs from the original one in \eqref{lagrangian},
+	by a non-Abelian rotation $ \theta $,
+	it is the one which affects the colour gauge field.
+
+
+	Finally, equation \eqref{flow} determines the dynamics (flow) of the fluid.
+	Let us first plug this equation into the original Lagrangian \eqref{lagrangian}, to find
+\beq
+	\ml    ~~=~~    n\, f^\prime(n)  ~-~  f(n)  ~+~ \frac{1}{2}\, \Tr\, G_{\mu\nu}^2\,.
+\eeq
+	This roughly corresponds to our vision of the starting point for the ``integrated'' action for
+	hydrodynamics.
+
+
+%%	Now let us take the curl of Eq.~\eqref{flow}, and contract it with $ J^\mu $,
+%%\beq
+%%	\big[\, J^\mu,~ \p_{[\mu} \Big( \frac{f^\prime}{n}\, J_{\nu]} \Big) \,]  ~+~
+%%	\frac{f^\prime}{n}\, \big[\, J^\mu\, [\, A_{[\mu}\, J_{\nu]} \,] \,\big]    ~~=~~
+%%	\big[\, J^\mu\, [\, G_{\mu\nu}\, \theta \,] \,\big] \,.
+%%\eeq
+%%	The left hand side should determine the Euler equation for the fluid, with the right hand side
+%%	being interpreted as the non-Abelian Lorentz force acting on the current.
+%%	Although an unimportant detail, by appearance this is the Lorentz force
+%%	induced by either of the currents
+%%	$ J^\mu $ and $ [\, \theta\, J^\mu \,] $,
+%%\beq
+%%	\big[\, J^\mu\, [\, G_{\mu\nu}\, \theta \,] \,\big]    ~~=~~
+%%	-\, \big[\, G_{\mu\nu}\, [\, \theta\, J^\mu \,] \,\big]  ~-~
+%%	    \big[\, \theta\, [\, G_{\mu\nu}\, J^\mu \,] \,\big]\,.
+%%\eeq
+
+	We now can calculate the (covariant) curl of Eq.~\eqref{flow}, to obtain
+\beq
+\label{curl}
+	\partial_{[\mu}\, \Big( \frac{f^\prime}{n}\, J_{\nu]} \Big)  ~~+~~
+	\frac{f^\prime}{n}\, \big[\, A_{[\mu}\, J_{\nu]} \,\big]    ~~=~~
+	[\, G_{\mu\nu}\, \theta \,]\,.
+\eeq
+	As customary, we split the currents $ J_\mu^a $ into their ``lengths'' --- $ n^a $,
+	and the directions --- $ u_\mu^a $,
+\beq
+	J_\mu    ~~=~~    n^a\, u_{\mu}^a\, T^a\,.
+\eeq
+	Let us contract equation \eqref{curl} with $ J_\mu^a T^a $ for a certain $ a $,
+	and multiply it by $ u_\mu^a $.
+	To emphasize that there is \emph{no summation} in index $ a $, we denote it as $ \slashed{a} $,
+\beq
+\label{uchange}
+	u_\mu^\slashed a\, \p_{[\mu} \Big( \frac{f^\prime}{n}\, J_{\nu]}^\slashed a \Big)  ~~+~~
+	\frac{f^\prime}{n}\, f^{\slashed a b c}\, u_\mu^\slashed a\, A_{[\mu}^b\, J_{\nu]}^c    ~~=~~
+	f^{\slashed a b c}\, u_\mu^\slashed a\, G_{\mu\nu}^b\, \theta^c\,.
+\eeq
+	The first term is supposed to give the change of the current $ u_\mu^{\slashed a} $,
+	the second term is non-Abelian in nature, while the third term has the appearance of the Lorentz force.
+
+	To check, we find the non-relativistic limit of Eq.~\eqref{uchange}, $ u^\mu ~\approx~ (\,1,~ \vec{v}\,) $,
+\beq
+	\p_0\, v_k^\slashed a  ~+~  (\vec{v}{}^\slashed{a}\, \vec{\p})\, v_k^\slashed a    \,~=~\,
+	-\, \p_k\, L^\slashed{a}  ~-~  \frac{1}{(n^\slashed{a})^2}\, f^{\slashed a b c}\, J_\mu^\slashed{a}\, J_{[\mu}^b\, A_{k]}^c  ~+~
+	\frac{1}{f^\prime / n\, (n^{\slashed a})^2}\, f^{\slashed a b c}\, J_\mu^\slashed{a}\, G_{\mu k}^b\, \theta^c\,,
+\eeq
+	where
+\beq
+	L^\slashed{a}    ~~=~~    \ln\, \Big( \frac{f^\prime}{n}\, n^\slashed{a} \Big)
+\eeq
+	gives the force resulting from the internal dynamics.
+	The last term indeed has the form of the Lorentz force acting on the current $ [\, \theta\, J^\mu \,] $.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                              %
+%                  E N E R G Y   M O M E N T U M   T E N S O R                 %
+%                                                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Energy-Momentum Tensor}
+	Let us calculate the energy-momentum tensor of the Chromohydrodynamic (CHD) part of Lagrangian \eqref{lagrangian}.
+	In a gauge theory it is easier to vary with respect to metric $ g^{\mu\nu} $ rather obtaining
+	a symmetric canonical energy-momentum tensor.
+
+	One has to also take into account that $ f(n) $ also depends on the metric via $ n $.
+	We find,
+\beq
+\label{emtensor}
+	T_{\mu\nu}^\text{CHD}    ~~=~~    \frac{(n^a)^2}{n^2}\, n f^\prime \cdot u_\mu^a u_\nu^a  ~~-~~
+					  g^{\mu\nu}\, \big(\, n f^\prime ~-~ f(n) \,\big)\,.
+\eeq
+	We observe that we have a single common pressure
+\beq
+	p    ~~=~~    n f^\prime(n) ~-~ f(n)
+\eeq
+	and $ N^2 - 1 $ energy densities
+\beq
+	\rho^a    ~~=~~    \lgr \Big( \frac{n^a}{n} \Big)^2 ~-~ 1 \rgr n f^\prime  ~~+~~ f(n)
+\eeq
+	which sum up to $ f(n) $.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                              %
+%                                                                              %
+%                        S C A L A R   V A R I A B L E S                       %
+%                                                                              %
+%                                                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Scalar variables}
+
+	Now let us express the gauge field and the current in terms of scalar variables $ X^a $, $ Y^a $, $ Z^a $.
+\beq
+\label{defA}
+        A_\mu    ~~=~~    X^a\, \p_\mu Y^a\, \cdot\, T^a\,,
+\eeq
+	and, correspondingly, the field strength is
+\beq
+\label{defG}
+	G_{\mu\nu}    ~~=~~    \md_{[\mu}\, \md_{\nu]}\,.
+\eeq
+	In terms of the scalars, the field strength is
+\beq
+\label{Ga}
+	G{}_{\mu\nu}^a    ~~=~~    \p_{[\mu} X^a\, \p_{\nu]} Y^a  ~~+~~
+				   f^{abc}\, X^b\, X^c\, \p_\mu Y^b\, \p_\nu Y^c\,.
+\eeq
+        Notice we have not introduced the coupling constant $ g $ yet, for simplicity of calculations.
+	When needed, it is introduced simply by rescaling $ A_\mu ~\to~ g\, A_\mu $.
+	The field strength will have to be divided by one power of $ g $ at the same time.
+	But that will be done later.
+
+        We do not treat $ X $ and $ Y $ as matrices separately, instead their combination \eqref{defA} is a matrix.
+	In order to construct an explicitly conserved current, we introduce $ N^2 - 1 $ variables $ Z^a $,
+	which now we treat as a matrix
+\beq
+	Z    ~~=~~    Z^a\, T^a\,.
+\eeq
+	We define,
+\beq
+\label{defJ}
+	J^\mu    ~~=~~    \epsilon^{\mu\nu\rho\sigma}\, [\, G_{\nu\rho},\, \p_\sigma Z\, ]\,.
+\eeq
+	This current is covariantly conserved identically,
+\beq
+\label{cont}
+	\md^{A}_\mu\, J^\mu    ~~\equiv~~    0\,.
+\eeq
+	This can be seen as follows.
+	The field strength $ G_{\mu\nu} $ acting as a commutator on a matrix $ M $ can be written as
+	a sequence of two gauge derivatives
+\beq
+	[\, G_{\mu\nu}\,\, M \,]    ~~=~~    \md^\text{A}_{[\mu}\, \md^\text{A}_{\nu]}\, M\,,
+\eeq
+	quite similar to the definition \eqref{defG}.
+	Following this, equation \eqref{defJ} can be rewritten as
+\beq
+	J^\mu    ~~=~~    2\, \epsilon^{\mu\nu\rho\sigma}\, \md^\text{A}_\nu\, \md^\text{A}_\rho\, \p_\sigma Z\,.
+\eeq
+	Then,
+\beq
+	\md^\text{A}_\mu\, J^\mu    ~~=~~    2\, \epsilon^{\mu\nu\rho\sigma}\,
+					     \md^\text{A}_\mu\, \md^\text{A}_\nu\, \md^\text{A}_\rho\, \p_\sigma Z\,
+				    ~~=~~    0\,,
+\eeq
+	due to the Bianchi identity for $ \md^\text{A}_\mu $,
+\beq
+	\epsilon^{\mu\nu\rho\sigma}\, \md^\text{A}_\nu\, \md^\text{A}_\rho\, \md^\text{A}_\sigma    ~~=~~    0\,.
+\eeq
+	Precisely because of the Bianchi identity we could not have used a full gauge derivative $ \md_\sigma Z $
+	in the definition of $ J^\mu $ \eqref{defJ}, or the current would identically have been zero.
+
+	Let us analyze equations \eqref{cconserv}--\eqref{flow} now in terms of the number of degrees of freedom.
+	The first equation \eqref{cconserv} is now satisfied identically.
+	The third equation \eqref{flow} is in fact the definition of the Clebsch potential $ \theta $.
+	In general, there are not enough degrees of freedom in $ \theta $ to represent an arbitrary
+	(conserved) current $ J^\mu $ in the right hand side.
+	We can assume that the currents are not highly circular, and so admit a parametrization in terms of
+	just one Clebsch parameter.
+	Alternatively, we could have introduced more Clebsch parameters --- matrices $ \alpha $ and $ \beta $.
+	This would just make the right hand side of equation \eqref{maxwell} more complicated, as well as that of \eqref{curl}.
+	No conceptual difference would have arisen.
+	Finally, equation \eqref{maxwell} is the non-Abelian Maxwell equation.
+	There are $ 4 \times (N^2 - 1 ) $ equations on $ 3 \times (N^2 - 1) $ variables
+	$ X^a $, $ Y^a $ and $ Z^a $
+	($ \theta $ does not count as it is expressed in terms of $ X^a $, $ Y^a $ and $ Z^a $).
+	Such a situation is not overdefined, as from equation \eqref{maxwell} immediately follows
+	the continuity equation \eqref{cont}, which has been satisfied explicitly.
+	Subtracting the $ N^2 - 1 $ degrees of the latter equation, we have precisely
+	$ 3 \times (N^2 - 1) $ equations for $ 3 \times (N^2 - 1) $ variables.
+
+
+	Note, that because of the commutator in \eqref{defJ}, we do \emph{not} have the decoupling
+	property of the currents in the weak coupling limit --- the presence of the structure constant $ f^{abc} $
+	in that commutator would mix all the currents.
+	The field strength $ G_{\mu\nu}^a $ in \eqref{Ga} in the limit $ g ~\to~ 0 $
+	(which corresponds to dropping the second term), obviously decomposes into a set of $ N^2 - 1 $
+	fields.
+	However, it is unclear whether the decomposition of the ``effective'' current should take place,
+	as even in the case of SU(2), in the weak-coupling limit, all quarks and gluons are still mixed
+	due to the non-Abelian nature of the interactions.
+	Indeed, two of the three gluons mix both quarks, while all the gluons are mixed due to the triple-gluon
+        vertex.
+	If one takes the $ g ~=~ 0 $ limit to completely suppress such a vertex, the usual quark-gluon
+        $ J^\mu A_\mu $ vertex of the QCD will also disappear, in which case there would be no sense of talking about a plasma.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                              %
+%                                                                              %
+%                 S I N G L E   C U R R E N T   A P P R O A C H                %
+%                                                                              %
+%                                                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Single current approach}
+	Following Jackiw \cite{}, we can construct a scalar conserved current $ j^\mu $.
+	In the latter approach, all currents flow in the same direction. 
+	Using our variables $ X^a $, $ Y^a $ and $ Z^a $, we introduce,
+\beq
+	j^\mu    ~~=~~    \epsilon^{\mu\nu\rho\sigma}\, f_{abc}\, \p_\nu X^a\, \p_\rho Y^b\, \p_\sigma Z^c\,.
+\eeq
+	The Eckart's form \cite{} implies\,
+\beq
+	J^\mu    ~~=~~    Q \cdot j^\mu\,.
+\eeq
+	With these definitions, Jackiw's approach may be used.
+	However, besides variables $ X^a $, $ Y^a $ and $ Z^a $, we also have to introduce $ Q^a $.
+	There are now too many degrees of freedom for the Maxwell's equations --- we earlier
+	argued that just $ X^a $, $ Y^a $ and $ Z^a $ are enough.
+	Nevertheless, Jackiw's results can be used unchanged.
+
+
+
+
+\vspace{1cm}
+	Finally, we note that neither of the two approaches that we have presented exhibit the effect
+	of freezing of the chromomagnetic lines.
+	Jackiw was able to derive the hydrodynamic equations (and so were we), without demanding
+	this freezing.
+	
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                              %
+%                                                                              %
+%                             C O N C L U S I O N S                            %
+%                                                                              %
+%                                                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                              %
+%                                                                              %
+%                          A C K N O W L E D G M E N T S                       %
+%                                                                              %
+%                                                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Acknowledgments}
+
+\small
+\begin{thebibliography}{99}
+\itemsep -2pt
+
+\end{thebibliography}
+
+
+\end{document}
