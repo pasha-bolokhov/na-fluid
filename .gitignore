@@ -1,5 +1,7 @@
 #
 /*.pdf
+/na-fluid.ps
+/na-resolved.ps
 *.aux
 *.dvi
 *.log
