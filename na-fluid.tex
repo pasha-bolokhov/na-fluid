@@ -11,7 +11,6 @@
 \usepackage{color}
 \usepackage{bm}
 \usepackage{slashed}
-\usepackage{stix}
 \usepackage{showlabels}
 
 
@@ -588,14 +587,63 @@
 	The expansion in the coupling constant $ g $ will correspond to an expansion in the (even) powers of $ q_\mu^a $.
 
 	Substituting expansion \eqref{G-pert} into Eq.~\eqref{T-gluon} we find
-\begin{align*}
+\begin{align}
 %
+\notag
 	T_\text{gluon}^{\mu\nu}    & ~~=~~    \frac{f^\prime_\varphi}{\varphi}\, (\varphi^a)^2\,
 					      \lgr \pm\, w^{a\mu}\, w^{a\nu}  ~+~  u^{a\mu}\, u^{a\nu} \rgr    ~~-~~
+	\\[2mm]
+%
+\label{full-tensor}
+				   & ~~-~~  \frac{f^\prime_\varphi}{\varphi}\, \varphi^a\,
+					    Q^{abc}_{\underline{\mu}\lambda}\, q^b_{\underline{\nu}}\, q^c_\lambda
+				     ~~-~~  \frac{f^\prime_\varphi}{\varphi}\,
+					    R^{abcd}\, ( q^a_\kappa\, q^c_\kappa )\, q^b_\mu\, q^d_\nu    ~~-~~
+	\\[2mm]
+%
+\notag
+				   & ~~-~~  g^{\mu\nu}
+					    \lgr \frac{f^\prime_\varphi}{\varphi}\, (\varphi^a)^2  ~-~  f \rgr .
+\end{align}
+	Here the underlined subscripts $ \underline{\mu} $ and $ \underline{\nu} $ assume symmetrization
+	in these indices.
+	The coefficients $ Q^{abc}_{\mu\nu} $ and $ R^{abcd} $ are defined as
+\begin{align*}
+%
+	Q^{abc}_{\mu\nu}    & ~~=~~    \epsilon_{\mu\nu\rho\sigma}\,
+				       f^{\slashed a\slashed b\slashed c}\, A^\slashed{b}\, A^\slashed{c}\,
+				       w^{a\rho}\, u^{a\sigma}\,,
+	\\[2mm]
+%
+	R^{abcd}    & ~~=~~    f^{f\slashed a\slashed b}\, A^\slashed{a}\, A^\slashed{b} \cdot
+			       f^{f\slashed c\slashed d}\, A^\slashed{c}\, A^\slashed{d}\,.
+\end{align*}
+	Tensor \eqref{full-tensor} is a complete expression for the energy-momentum tensor,
+	even though it does have the appearance of an expansion in powers of $ q^a_\mu $.
+
+	To obtain a true expansion in powers of the coupling constant, we observe that the flux $ \varphi $
+	needs to be expanded beforehand,
+\beq
+	\varphi^2    ~~=~~    (\varphi^a)^2  ~~+~~ \varphi^a\, Q^{abc}_{\kappa\lambda}\, q^b_\kappa\, q^c_\lambda
+		     ~~+~~ \frac 1 2\, R^{abcd}\, (q^a_\kappa\, q^c_\kappa)\, (q^b_\lambda\, q^d_\lambda)\,.
+\eeq
+	Substituting this, we obtain the leading order contribution to the gluon energy-momentum tensor,
+\begin{align}
+%
+\notag
+	T_\text{gluon}^{\mu\nu}    & ~~=~~    2\, f^\prime_{\varphi^2} \bigg|_{\varphi_{(0)}}\,
+					      (\varphi^a)^2 \lgr \pm\, w^{a\mu}\, w^{a\nu}  ~+~  u^{a\mu}\, u^{a\nu} \rgr
+				     ~~-~~
 	\\
 %
-				   & ~~-~~  \frac{f^\prime_\phi}{\phi}\, \varphi^a\, \underparen{a}
-\end{align*}
+\label{tree-tensor}
+				   & ~~-~~    g^{\mu\nu} \lgr 2\, f^\prime_{\varphi^2}\, \varphi^2 ~-~ f \rgr \bigg|_{\varphi_{(0)}}
+				     ~~+~~
+	\\
+%
+\notag
+				   & ~~+~~    O\big(\, q^2\, \big)\,.
+\end{align}
 
 
 
