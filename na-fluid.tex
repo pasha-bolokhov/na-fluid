@@ -11,6 +11,7 @@
 \usepackage{color}
 \usepackage{bm}
 \usepackage{slashed}
+\usepackage{stix}
 \usepackage{showlabels}
 
 
@@ -410,6 +411,25 @@
 \eeq
 	which sum up to $ f(n) $.
 
+        We can go further than Eq.~\eqref{lagrangian} and declare that the Lagrangian
+        is a generic function of $ n $ and of the non-Abelian field strength $ \varphi^2 $,
+\beq
+\label{generic}
+        \ml    ~~=~~    2\, \Tr\, J_\mu\,  \md^{\text{A}\mu} \theta   ~~-~~  f(n, \varphi^2)\,,
+\eeq
+        where
+\beq
+        \varphi^2    ~~=~~    \Tr\, G_{\mu\nu}^2\,.
+\eeq
+	The expression in Eq.~\eqref{emtensor} still gives the contribution of the current to the energy-momentum tensor,
+	while the gluonic contribution to the latter is
+\beq
+\label{T-gluon}
+	T_{\mu\nu}^\text{gluon}    ~~=~~    -\, 4\, f^\prime_{\varphi^2} \cdot \Tr\, G^{\mu\lambda}\, G^{\nu\lambda}
+				   ~~+~~    g_{\mu\nu}\, f(n, \varphi^2)\,.
+\eeq
+	We understand here that the last term here is shared with Eq.~\eqref{emtensor}.
+
 
 
 
@@ -516,6 +536,66 @@
         vertex.
 	If one takes the $ g ~=~ 0 $ limit to completely suppress such a vertex, the usual quark-gluon
         $ J^\mu A_\mu $ vertex of the QCD will also disappear, in which case there would be no sense of talking about a plasma.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                              %
+%       T R E E - L E V E L   E N E R G Y   M O M E N T U M   T E N S O R      %
+%                                                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Tree-level energy momentum tensor}
+	In the Abelian plasma, the field strength $ F^{\mu\nu} $ happens to be a bivector,
+	which helps a lot in understanding the structure of the energy-momentum tensor.
+	In our case, the field strength \eqref{Ga} obviously is not a bivector, but
+	if we make a perturbative expansion, we can treat it as such.
+	
+	In order to make a perturbative expansion, one normally redefines $ A^\mu ~\to~ g A^\mu $
+	while at the same time $ G^{\mu\nu} ~\to~ g^{-1} G^{\mu\nu} $.
+	We prefer not to do this explicitly, while keeping in mind that each additional power of $ X $ or $ Y $
+	carries an extra power of the coupling constant.
+
+	Then the "tree-level" field strength happens to be a bivector,
+\beq
+	G_{\mu\nu}^{(0)a}    ~~=~~    \p_{[\mu} X^a\, \p_{\nu]} Y^a\,,
+\eeq
+	and can be treated the same way as in the Abelian plasma.
+	Explicitly, the dual field strength is defined to be
+\beq
+	\wt{G}{}_{\mu\nu}^{(0)a}    ~~=~~    \phi^\slashed{a}\, w^{\slashed{a}[\rho}\, u^{\sigma]\slashed{a}},
+\eeq
+	where
+\beq
+	w^{\slashed{a}\mu}\, w^{\slashed{a}}_\mu    ~~=~~    \mp\,1\,
+\eeq
+	(the upper sign is for Euclidean and the lower sign for Minkowski spaces correspondingly),
+	and
+\beq
+	( \varphi^\slashed{a} )^2    ~~=~~    \frac{1}{2}\, \big( \p_{[\mu} X^\slashed{a}\, \p_{\nu]} Y^\slashed{a} \big)^2\,.
+\eeq
+
+	With these definitions the field strength \eqref{Ga} can be re-written as
+\beq
+\label{G-pert}
+	G_{\mu\nu}^\slashed a    ~~=~~    \epsilon_{\mu\nu\rho\sigma}\, \phi^\slashed{a} \cdot w^{a\rho}\, u^{a\sigma}
+				 ~~+~~  ( f^{abc}\, A^b\, A^c )\, q_\mu^b\, q_\nu^c\,.
+\eeq
+	We have also introduced here a unit vector $ q^a_\mu $ directed along potential $ A_\mu^a $,
+\beq
+	A_\mu^a    ~~=~~    X^\slashed a\, \p_\mu Y^\slashed a    ~~\equiv~~    A^\slashed a \cdot q_\mu^\slashed a\,,
+	\qquad\qquad
+	( q_\mu^\slashed a )^2    ~~=~~    1\,.
+\eeq
+	The expansion in the coupling constant $ g $ will correspond to an expansion in the (even) powers of $ q_\mu^a $.
+
+	Substituting expansion \eqref{G-pert} into Eq.~\eqref{T-gluon} we find
+\begin{align*}
+%
+	T_\text{gluon}^{\mu\nu}    & ~~=~~    \frac{f^\prime_\varphi}{\varphi}\, (\varphi^a)^2\,
+					      \lgr \pm\, w^{a\mu}\, w^{a\nu}  ~+~  u^{a\mu}\, u^{a\nu} \rgr    ~~-~~
+	\\
+%
+				   & ~~-~~  \frac{f^\prime_\phi}{\phi}\, \varphi^a\, \underparen{a}
+\end{align*}
 
 
 
