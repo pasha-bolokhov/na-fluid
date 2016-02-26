@@ -396,8 +396,9 @@
 	We find,
 \beq
 \label{emtensor}
-	T_{\mu\nu}^\text{CHD}    ~~=~~    \frac{(n^a)^2}{n^2}\, n f^\prime \cdot u_\mu^a u_\nu^a  ~~-~~
-					  g^{\mu\nu}\, \big(\, n f^\prime ~-~ f(n) \,\big)\,.
+	T_{\mu\nu}    ~~=~~
+				\frac{(n^a)^2}{n^2}\, n f^\prime \cdot u_\mu^a u_\nu^a  ~~-~~
+				g^{\mu\nu}\, \big(\, n f^\prime ~-~ f(n) \,\big)\,.
 \eeq
 	We observe that we have a single common pressure
 \beq
@@ -419,14 +420,22 @@
 \beq
         \varphi^2    ~~=~~    \Tr\, G_{\mu\nu}^2\,.
 \eeq
-	The expression in Eq.~\eqref{emtensor} still gives the contribution of the current to the energy-momentum tensor,
-	while the gluonic contribution to the latter is
-\beq
-\label{T-gluon}
-	T_{\mu\nu}^\text{gluon}    ~~=~~    -\, 4\, f^\prime_{\varphi^2} \cdot \Tr\, G^{\mu\lambda}\, G^{\nu\lambda}
-				   ~~+~~    g_{\mu\nu}\, f(n, \varphi^2)\,.
-\eeq
-	We understand here that the last term in this equation is shared with Eq.~\eqref{emtensor}.
+	The expression in Eq.~\eqref{emtensor} still gives the contribution of the current to the energy-momentum tensor.
+	The overall expression that includes the contributions of both gluons and the current is
+\begin{align}
+%%
+\notag
+	T_{\mu\nu}^\text{CHD}   & 
+			~~=~~
+				2\, \frac{(n^a)^2}{n^2}\, n^2 f_{n^2}^\prime\, u_\mu^a u_\nu^a  ~~-~~
+				4\, f_{\varphi^2}^\prime\, \Tr\, G^{\mu\lambda} G^{\nu\lambda}  ~~-~~
+	\\[2mm]
+%%
+\label{TCHD}
+	& 
+			~~-~~
+				g^{\mu\nu} \lgr 2\, n^2\, f_{n^2}^\prime  ~+~  2\, \varphi^2\, f_{\varphi^2}^\prime  ~-~  f \rgr .
+\end{align}
 
 
 
@@ -460,80 +469,57 @@
 	When needed, it is introduced simply by rescaling $ A_\mu ~\to~ g\, A_\mu $.
 	The field strength will have to be divided by one power of $ g $ at the same time.
 	But that will be done later.
-
         We do not treat $ X $ and $ Y $ as matrices separately, instead their combination \eqref{defA} is a matrix.
-	In order to construct an explicitly conserved current, we introduce $ N^2 - 1 $ variables $ Z^a $,
-	which now we treat as a matrix
-\beq
-	Z    ~~=~~    Z^a\, T^a\,.
-\eeq
-	We define,
-\beq
-\label{defJ}
-	J^\mu    ~~=~~    \epsilon^{\mu\nu\rho\sigma}\, [\, G_{\nu\rho},\, \p_\sigma Z\, ]\,.
-\eeq
-	This current is covariantly conserved identically,
-\beq
-\label{cont}
-	\md^{A}_\mu\, J^\mu    ~~\equiv~~    0\,.
-\eeq
-	This can be seen as follows.
-	The field strength $ G_{\mu\nu} $ acting as a commutator on a matrix $ M $ can be written as
-	a sequence of two gauge derivatives
-\beq
-	[\, G_{\mu\nu}\,\, M \,]    ~~=~~    \md^\text{A}_{[\mu}\, \md^\text{A}_{\nu]}\, M\,,
-\eeq
-	quite similar to the definition \eqref{defG}.
-	Following this, equation \eqref{defJ} can be rewritten as
-\beq
-	J^\mu    ~~=~~    2\, \epsilon^{\mu\nu\rho\sigma}\, \md^\text{A}_\nu\, \md^\text{A}_\rho\, \p_\sigma Z\,.
-\eeq
-	Then,
-\beq
-	\md^\text{A}_\mu\, J^\mu    ~~=~~    2\, \epsilon^{\mu\nu\rho\sigma}\,
-					     \md^\text{A}_\mu\, \md^\text{A}_\nu\, \md^\text{A}_\rho\, \p_\sigma Z\,
-				    ~~=~~    0\,,
-\eeq
-	due to the Bianchi identity for $ \md^\text{A}_\mu $,
-\beq
-	\epsilon^{\mu\nu\rho\sigma}\, \md^\text{A}_\nu\, \md^\text{A}_\rho\, \md^\text{A}_\sigma    ~~=~~    0\,.
-\eeq
-	Precisely because of the Bianchi identity we could not have used a full gauge derivative $ \md_\sigma Z $
-	in the definition of $ J^\mu $ \eqref{defJ}, or the current would identically have been zero.
+	In particular, variables $ X $ and $ Y $ do not possess well-defined gauge transformation properties.
+	Instead, we treat \eqref{defA} as a particular \emph{gauge}, and thus
+	$ X $ and $ Y $ do not transform by definition.
 
-	Let us analyze equations \eqref{cconserv}--\eqref{flow} now in terms of the number of degrees of freedom.
-	The first equation \eqref{cconserv} is now satisfied identically.
-	The third equation \eqref{flow} is in fact the definition of the Clebsch potential $ \theta $.
-	In general, there are not enough degrees of freedom in $ \theta $ to represent an arbitrary
-	(conserved) current $ J^\mu $ in the right hand side.
-	We can assume that the currents are not highly circular, and so admit a parametrization in terms of
-	just one Clebsch parameter.
-	Alternatively, we could have introduced more Clebsch parameters --- matrices $ \alpha $ and $ \beta $.
-	This would just make the right hand side of equation \eqref{maxwell} more complicated, as well as that of \eqref{curl}.
-	No conceptual difference would have arisen.
-	Finally, equation \eqref{maxwell} is the non-Abelian Maxwell equation.
-	There are $ 4 \times (N^2 - 1 ) $ equations on $ 3 \times (N^2 - 1) $ variables
-	$ X^a $, $ Y^a $ and $ Z^a $
-	($ \theta $ does not count as it is expressed in terms of $ X^a $, $ Y^a $ and $ Z^a $).
-	Such a situation is not overdefined, as from equation \eqref{maxwell} immediately follows
-	the continuity equation \eqref{cont}, which has been satisfied explicitly.
-	Subtracting the $ N^2 - 1 $ degrees of the latter equation, we have precisely
-	$ 3 \times (N^2 - 1) $ equations for $ 3 \times (N^2 - 1) $ variables.
+	Despite the non-Abelian nature of the plasma, we intend on constructing an Abelian current.
+        This in part reflects the presence of an Abelian current in [{\it Jackiw}], via the non-Abelian Eckart decomposition [{\it Eckart}].
+	More generally, [{\it Jackiw}] indicates the presence of Abelian currents residing in the Cartan subalgebra.
+
+	Another way of looking at such an Abelian current is as follows.
+	In a QCD plasma it is not possible to introduce the number density, because quarks of all sorts
+	mix and match.
+	If, however, the interactions are temporarily switched off, one would find a number of non-interacting fluids.
+	Although this is an unphysical situation, we \emph{define} the current as the quantity which would
+        become the number density current in the non-interacting limit.
+	In the normal, interacting regime this current, very vaguely, describes the number density
+	of both quarks and gluons of a particular colour
+	(of course taking into account the fact that gluons carry the ``adjoint'' colour).
+
+	We define
+\beq
+\label{defna}
+	n^{\mu a}    ~~=~~    \epsilon^{\mu\nu\rho\sigma}\, \p_\nu X^\slashed{a}\, \p_\rho Y^\slashed{a}\, \p_\sigma Z^\slashed{a}\,,
+\eeq
+	where $ Z^a $ is a set of $ N^2 - 1 $ variables.
+	This current is explicitly conserved
+\beq
+\label{ncont}
+	\p_\mu\, n^{\mu a}    ~~=~~    0\,.
+\eeq
+	This approach is quite generic, in the sense that it allows for regimes where the number of Abelian
+	currents reduces.
+	In particular, it does not exclude scenarios in which there is just one or $ N - 1 $ Abelian currents.
+	These can be found as regimes in which some or all of the ``colour'' components of $ n^{\mu a} $ line up.
+
+	The Lagrangian can now be defined as a generic function of the ``invariant number density'' of this current
+\beq
+	\mc{L}    ~~=~~    \mc{L}(n^2)\,,
+        \qquad\qquad
+        n^2 ~~=~~ n_\mu^a\, n^{\mu a}\,.
+\eeq
+
+	It is important to recognize that \eqref{defna} is \emph{not} a chromomagnetic current,
+        because the latter one would only be conserved covariantly.
+	We are not specifically concerned about the expression for the chromomagnetic current.
+	Its form can be found from the Maxwell equation
+\beq
+	\md^\text{A}_\mu\, G^{\mu\nu}     ~~=~~    j^\nu\,.
+\eeq
 
 
-	Note, that because of the commutator in \eqref{defJ}, we do \emph{not} have the decoupling
-	property of the currents in the weak coupling limit --- the presence of the structure constant $ f^{abc} $
-	in that commutator would mix all the currents.
-	The field strength $ G_{\mu\nu}^a $ in \eqref{Ga} in the limit $ g ~\to~ 0 $
-	(which corresponds to dropping the second term), obviously decomposes into a set of $ N^2 - 1 $
-	fields.
-	However, it is unclear whether the decomposition of the ``effective'' current should take place,
-	as even in the case of SU(2), in the weak-coupling limit, all quarks and gluons are still mixed
-	due to the non-Abelian nature of the interactions.
-	Indeed, two of the three gluons mix both quarks, while all the gluons are mixed due to the triple-gluon
-        vertex.
-	If one takes the $ g ~=~ 0 $ limit to completely suppress such a vertex, the usual quark-gluon
-        $ J^\mu A_\mu $ vertex of the QCD will also disappear, in which case there would be no sense of talking about a plasma.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -585,7 +571,7 @@
 \eeq
 	The expansion in the coupling constant $ g $ will correspond to an expansion in the (even) powers of $ q_\mu^a $.
 
-	Substituting expansion \eqref{G-pert} into Eq.~\eqref{T-gluon} we find
+	Using expansion \eqref{G-pert} we find
 \begin{align}
 %
 \notag
@@ -662,42 +648,44 @@
 \end{align}
 	Again, here the upper sign of $ \pm $ corresponds to Euclidean space, and the lower sign to Minkowski space.
 
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                                                                              %
-%                                                                              %
-%                 S I N G L E   C U R R E N T   A P P R O A C H                %
-%                                                                              %
-%                                                                              %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Single current approach}
-	Following Jackiw \cite{}, we can construct a scalar conserved current $ j^\mu $.
-	In the latter approach, all currents flow in the same direction. 
-	Using our variables $ X^a $, $ Y^a $ and $ Z^a $, we introduce,
+	Equation \eqref{tree-tensor} can now be complemented with the contribution of the Abelian currents \eqref{defna}.
+	Now we assume that the Lagrangian is a generic function of $ n^2 $ and $ \varphi^2 $,
 \beq
-	j^\mu    ~~=~~    \epsilon^{\mu\nu\rho\sigma}\, f_{abc}\, \p_\nu X^a\, \p_\rho Y^b\, \p_\sigma Z^c\,.
+	\mc{L}    ~~=~~    -\, f( n^2, \varphi^2 )\,.
 \eeq
-	The Eckart's form \cite{} implies\,
-\beq
-	J^\mu    ~~=~~    Q \cdot j^\mu\,.
-\eeq
-	With these definitions, Jackiw's approach may be used.
-	However, besides variables $ X^a $, $ Y^a $ and $ Z^a $, we also have to introduce $ Q^a $.
-	There are now too many degrees of freedom for the Maxwell's equations --- we earlier
-	argued that just $ X^a $, $ Y^a $ and $ Z^a $ are enough.
-	Nevertheless, Jackiw's results can be used unchanged.
+	Taking into account the fact that \eqref{defna} is a pseudo-vector, the overall energy-momentum tensor reads,
+\begin{align}
+%
+\notag
+	T_\text{gluon}^{\mu\nu}    &
+					~~=~~
+						\bigl\lgroup 2\, f_{n^2}^\prime (n^a)^2  ~+~
+        					2\, f^\prime_{\varphi^2} \bigg|_{\varphi_{(0)}}\, (\varphi^a)^2 \bigr\rgroup
+						u^{a\mu}\, u^{a\nu}
+					~~\pm~~
+	\\[2mm]
+%
+\label{Ttotal}
+	&
+					~~\pm~~
+						2\, f^\prime_{\varphi^2} \bigg|_{\varphi_{(0)}}\, (\varphi^a)^2\, w^{a\mu}\, w^{a\nu}
+					~~-~~
+	\\[2mm]
+%
+\notag
+	& 
+					~~-~~
+					g^{\mu\nu} \lgr
+						2\, f_{n^2}^\prime n^2 ~+~ 2\, f^\prime_{\varphi^2}\, \varphi^2
+						~-~ f
+					\rgr \bigg|_{\varphi_{(0)}}
+					~~+~~
+					O\big(\, q^2 \,\big)\,.
+\end{align}
+	Notably, expression \eqref{Ttotal} has the same form as \eqref{TCHD} --- except for the presence
+	of the anisotropic term due to $ w^{a\mu} $, and for a more specific form of $ G_{\mu\nu}^a $
+	in terms of $ u^{\mu a} $.
 
-
-
-
-\vspace{1cm}
-	Finally, we note that neither of the two approaches that we have presented exhibit the effect
-	of freezing of the chromomagnetic lines.
-	Jackiw was able to derive the hydrodynamic equations (and so were we), without demanding
-	this freezing.
-	
 
 
 
