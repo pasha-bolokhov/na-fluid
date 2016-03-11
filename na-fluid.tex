@@ -232,10 +232,32 @@
 
 
 \begin{center}
-{  \Large \bf  A Model of Non-Abelian Magnetohydrodynamics}
+{  \Large \bf  Non-Abelian Fluids and String Fluids}
 \end{center}
 
-\vspace{2mm}
+\vspace{0.4cm}
+
+\begin{center}
+
+{\large
+\bf   Pavel A.~Bolokhov$^{\,a,b}$}
+\end {center}
+
+\begin{center}
+$^a${\it Department of Physics \& Astronomy, University of Minnesota Duluth,\\
+	 Duluth, MN, 55812, USA}\\
+$^b${\it Theoretical Physics Department, St.Petersburg State University, Ulyanovskaya~1, 
+         Peterhof, St.Petersburg, 198504, Russia}
+\end{center}
+
+\vspace{0.6cm}
+
+\begin{center}
+{\large\bf Abstract}
+\end{center}
+
+        Motivated by ... we find ...
+\vspace{2cm}
 
 
 \end{titlepage}
@@ -251,6 +273,17 @@
 %                                                                              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
+
+\begin{itemize}
+\item {\it Emphasize importance of the subject}
+
+\item {\it Insert about the non-Abelian components of the current ---
+	they are non-observable anyway.
+	It is imaginable that different quarks move different ways
+	in the same field.
+	We test the general idea of the possibility to have non-Abelian interacting fluids}
+\end{itemize}
+
 \setcounter{equation}{0}
 
 	Consider a Lagrangian which would roughly form a generalization of the Clebsch parametrization,
@@ -380,6 +413,23 @@
 \eeq
 	gives the force resulting from the internal dynamics.
 	The last term indeed has the form of the Lorentz force acting on the current $ [\, \theta\, J^\mu \,] $.
+
+	We now comment on the fact that although Lagrangian \eqref{lagrangian} does indeed involve Clebsch parametrization
+	of a vector field, it is not expressed in terms of potential $ \theta $.
+	Instead, it is written as a Legendre transformation from variables $ J^\mu $ to $ \theta $.
+	In order to re-write the Lagrangian purely in terms of $ \theta $, one needs to exclude $ J^\mu $ via
+	Eq.~\eqref{flow}.
+	This process, however, is not straightforward because function $ f^\prime(n) $ in the RHS of the latter equation
+	itself depends on $ J^\mu $.
+
+	\emph{There is one observation that helps}
+
+	In general, we expect therefore that the Lagrangian is an arbitrary function --- which we call pressure ---
+	of the combination $ \sqrt{ (\md^\text{A}_\mu\, \theta)^2 } $,
+\beq
+	\ml    ~~=~~    p\Big(\sqrt{(\md^\text{A}_\mu \theta)^2}\Big)  ~+~ \frac{1}{2}\, \Tr\, G_{\mu\nu}^2\,.
+\eeq
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
