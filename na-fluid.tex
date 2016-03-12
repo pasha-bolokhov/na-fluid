@@ -306,6 +306,7 @@ $^b${\it Theoretical Physics Department, St.Petersburg State University, Ulyanov
 \eeq
 	is the analogue of the Clebsch potential,
 \beq
+\label{defn}
 	f(n)\,, \qquad\qquad n ~=~ \sqrt{ J_\mu^a\, J^{\mu a} }
 \eeq
 	is a function determining the dynamics of the fluid (interactions and so on),
@@ -354,6 +355,7 @@ $^b${\it Theoretical Physics Department, St.Petersburg State University, Ulyanov
 	Finally, equation \eqref{flow} determines the dynamics (flow) of the fluid.
 	Let us first plug this equation into the original Lagrangian \eqref{lagrangian}, to find
 \beq
+\label{Lf}
 	\ml    ~~=~~    n\, f^\prime(n)  ~-~  f(n)  ~+~ \frac{1}{2}\, \Tr\, G_{\mu\nu}^2\,.
 \eeq
 	This roughly corresponds to our vision of the starting point for the ``integrated'' action for
@@ -421,15 +423,40 @@ $^b${\it Theoretical Physics Department, St.Petersburg State University, Ulyanov
 	Eq.~\eqref{flow}.
 	This process, however, is not straightforward because function $ f^\prime(n) $ in the RHS of the latter equation
 	itself depends on $ J^\mu $.
-
-	\emph{There is one observation that helps}
-
-	In general, we expect therefore that the Lagrangian is an arbitrary function --- which we call pressure ---
-	of the combination $ \sqrt{ (\md^\text{A}_\mu\, \theta)^2 } $,
+	So in a general case one would have to invert the RHS of Eq.~\eqref{flow} as a function of $ J^\mu $.
+	In our case, one can use the definition of $ n $ in \eqref{defn} in order to find that
 \beq
-	\ml    ~~=~~    p\Big(\sqrt{(\md^\text{A}_\mu \theta)^2}\Big)  ~+~ \frac{1}{2}\, \Tr\, G_{\mu\nu}^2\,.
+	f^\prime(n)    ~~=~~    \sqrt{ (\md^\text{A}_\mu\, \theta)^2 }\,,
 \eeq
-
+	and therefore,
+\beq
+\label{Lresolved}
+	\ml    ~~=~~    \sqrt{ (\md^\text{A}_\mu\, \theta)^2 } \cdot 
+			f^{\prime -1}\Big(\sqrt{ (\md^\text{A}_\mu\, \theta)^2 }\Big)  ~-~
+			f \circ f^{\prime -1}\Big(\sqrt{ (\md^\text{A}_\mu\, \theta)^2 }\Big)  ~+~
+			\dots
+\eeq
+	where $ \circ $ denotes composition of functions, and we have temporarily omitted the gauge contribution.
+	Although this is a notably bulky expression, we note that in general $ f(n) $ is an arbitrary
+	function of $ n $,
+	and therefore the right-hand side of Eq.~\eqref{Lresolved} is still an arbitrary function of
+	the square root,
+\beq
+\label{Lp}
+	\ml    ~~=~~    p\Big(\sqrt{(\md^\text{A}_\mu\, \theta)^2}\Big)  ~+~ \frac{1}{2}\, \Tr\, G_{\mu\nu}^2\,.
+\eeq
+	We have denoted this function as pressure because that is precisely the physical meaning of this term.
+	In hydrodynamics, as a rule, the Lagrangian is the pressure.
+	The original function $ f(n) $, as in Eq.~\eqref{Lf} is related to $ p(\theta) $ via the Legendre transform in $ n $,
+	and can be roughly identified with the energy density --- as it should be for the energy density and pressure.
+	There was a hint at this in the general form of Lagrangian \eqref{lagrangian}, which has the canonical appearance of
+\beq
+	\ml    ~~=~~    p\, \dot{q}  ~-~    H(p,\,q)\,.
+\eeq
+	If the Lagrangian had precisely this form, then $ f(n) $ would actually have been the energy density of the fluid.
+	However this correspondence is only rough, since $ J_\mu\, \md_\text{A}^\mu \theta $ is not exactly $ p\,\dot q $.
+	Nevertheless, in the Abelian limit $ f(n) $ gives precisely the energy density [{\it Jackiw}], while
+	in our case, as we will see below, there are other contributions coming from the individual components of the fluid.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -438,11 +465,11 @@ $^b${\it Theoretical Physics Department, St.Petersburg State University, Ulyanov
 %                                                                              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Energy-Momentum Tensor}
-	Let us calculate the energy-momentum tensor of the Chromohydrodynamic (CHD) part of Lagrangian \eqref{lagrangian}.
+	Let us first calculate the energy-momentum tensor of the Chromohydrodynamic (CHD) part of Lagrangian \eqref{lagrangian}.
 	In a gauge theory it is easier to vary with respect to metric $ g^{\mu\nu} $ rather than obtaining
-	a symmetric canonical energy-momentum tensor.
+	a canonical energy-momentum tensor and then symmetrizing it.
 
-	One has to also take into account that $ f(n) $ also depends on the metric via $ n $.
+	One has to take into account that $ f(n) $ also depends on the metric via $ n $.
 	We find,
 \beq
 \label{emtensor}
@@ -459,6 +486,10 @@ $^b${\it Theoretical Physics Department, St.Petersburg State University, Ulyanov
 	\rho^a    ~~=~~    \lgr \Big( \frac{n^a}{n} \Big)^2 ~-~ 1 \rgr n f^\prime  ~~+~~ f(n)
 \eeq
 	which sum up to $ f(n) $.
+	We understand that this is only a ``semantic'' interpretation of $ \rho^a $ as individual energy densities.
+	Quantities $ \rho^a $ would be such if the fluids were non-interacting, in which case
+	the total energy density would be $ f(n) $.
+	In the interacting case the actual energy is of course given by $ T^{00} $.
 
         We can go further than Eq.~\eqref{lagrangian} and declare that the Lagrangian
         is a generic function of $ n $ and of the non-Abelian field strength $ \varphi^2 $,
