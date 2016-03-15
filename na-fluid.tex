@@ -483,16 +483,25 @@ $^b${\it Theoretical Physics Department, St.Petersburg State University, Ulyanov
 \eeq
 	and $ N^2 - 1 $ energy densities
 \beq
+\label{rho_a}
 	\rho^a    ~~=~~    \lgr \Big( \frac{n^a}{n} \Big)^2 ~-~ 1 \rgr n f^\prime  ~~+~~ f(n)
 \eeq
 	which sum up to $ f(n) $.
-	We understand that this is only a ``semantic'' interpretation of $ \rho^a $ as individual energy densities.
+        Note that we do not merely have a set of $ N ^2- 1 $ fluids --- they are interacting,
+        particularly by sharing a single pressure.
+	We also understand that expression \eqref{rho_a} is only a ``semantic'' interpretation of $ \rho^a $
+        as individual energy densities.
 	Quantities $ \rho^a $ would be such if the fluids were non-interacting, in which case
 	the total energy density would be $ f(n) $.
-	In the interacting case the actual energy is of course given by $ T^{00} $.
+	In the interacting case the actual energy is of course given by $ T_{00} $,
+\beq
+	\mc{H}    ~~=~~    \frac{(n^a)^2}{n^2}\, n f^\prime \cdot u_0^a u_0^a\,.
+\eeq
+	Even though this expression does formally split into individual components in index $ a $,
+	these components still depend on all of $ n^a $ via variable $ n $.
 
-        We can go further than Eq.~\eqref{lagrangian} and declare that the Lagrangian
-        is a generic function of $ n $ and of the non-Abelian field strength $ \varphi^2 $,
+        We now can go further than Eq.~\eqref{lagrangian} and declare the Lagrangian
+        a generic function of $ n $ and of the non-Abelian field strength $ \varphi^2 $,
 \beq
 \label{generic}
         \ml    ~~=~~    2\, \Tr\, J_\mu\,  \md^{\text{A}\mu} \theta   ~~-~~  f(n, \varphi^2)\,,
@@ -501,8 +510,8 @@ $^b${\it Theoretical Physics Department, St.Petersburg State University, Ulyanov
 \beq
         \varphi^2    ~~=~~    \Tr\, G_{\mu\nu}^2\,.
 \eeq
-	The expression in Eq.~\eqref{emtensor} still gives the contribution of the current to the energy-momentum tensor.
-	The overall expression that includes the contributions of both gluons and the current is
+	We then calculate the contribution of the gauge field to the energy-momentum tensor and arrive
+	at an overall expression
 \begin{align}
 %%
 \notag
@@ -530,17 +539,30 @@ $^b${\it Theoretical Physics Department, St.Petersburg State University, Ulyanov
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Scalar variables}
 
-	Now let us express the gauge field and the current in terms of scalar variables $ X^a $, $ Y^a $, $ Z^a $.
+	Another approach to parametrizing a conserved current in a fluid is to introduce scalar variables [{\it refs}].
+	These variables have been used in order to describe a fluid of strings, electromagnetic plasma and in other contexts [{\it refs}].
+	We intend here to provide a non-Abelian generalization of such an approach.
+        Although there are many ways how one can extend an Abelian theory to one with SU($ N $) gauge group,
+        our main intention is to retain connection with the Abelian limit.
+        Namely, we impose that when the non-Abelian gauge interaction becomes negligibly weak,
+        our theory must resort to a set of non-interacting Abelian fluids.
+        
+        In analogy with [{\it ref}] let us express the gauge field and the current
+        in terms of scalar variables $ X^a $, $ Y^a $, $ Z^a $,
 \beq
 \label{defA}
-        A_\mu    ~~=~~    X^a\, \p_\mu Y^a\, \cdot\, T^a\,,
+        A_\mu    ~~=~~    X^a\, \p_\mu Y^a\, \cdot\, T^a\,.
 \eeq
-	and, correspondingly, the field strength is
+        In this definition we do not treat $ X $ and $ Y $ as matrices separately, instead their combination \eqref{defA} is a matrix.
+        This means that variables $ X $ and $ Y $ do not possess well-defined gauge transformation properties.
+        We treat \eqref{defA} as a particular \emph{gauge}, and thus $ X $ and $ Y $ do not transform by definition.
+
+	The field strength of gauge field \eqref{defA}, as usual, is given by
 \beq
 \label{defG}
-	G_{\mu\nu}    ~~=~~    \md_{[\mu}\, \md_{\nu]}\,.
+	G_{\mu\nu}    ~~=~~    \md_{[\mu}\, \md_{\nu]}\,,
 \eeq
-	In terms of the scalars, the field strength is
+	which in terms of the scalars becomes
 \beq
 \label{Ga}
 	G{}_{\mu\nu}^a    ~~=~~    \p_{[\mu} X^a\, \p_{\nu]} Y^a  ~~+~~
@@ -549,27 +571,20 @@ $^b${\it Theoretical Physics Department, St.Petersburg State University, Ulyanov
         Notice we have not introduced the coupling constant $ g $ yet, for simplicity of calculations.
 	When needed, it is introduced simply by rescaling $ A_\mu ~\to~ g\, A_\mu $.
 	The field strength will have to be divided by one power of $ g $ at the same time.
-	But that will be done later.
-        We do not treat $ X $ and $ Y $ as matrices separately, instead their combination \eqref{defA} is a matrix.
-	In particular, variables $ X $ and $ Y $ do not possess well-defined gauge transformation properties.
-	Instead, we treat \eqref{defA} as a particular \emph{gauge}, and thus
-	$ X $ and $ Y $ do not transform by definition.
 
 	Despite the non-Abelian nature of the plasma, we intend on constructing an Abelian current.
         This in part reflects the presence of an Abelian current in [{\it Jackiw}], via the non-Abelian Eckart decomposition [{\it Eckart}].
 	More generally, [{\it Jackiw}] indicates the presence of Abelian currents residing in the Cartan subalgebra.
 
+\marginpar{\vspace{1.0cm} \tiny This paragraph needs to be re-phrased}
 	Another way of looking at such an Abelian current is as follows.
 	In a QCD plasma it is not possible to introduce the number density, because quarks of all sorts
 	mix and match.
 	If, however, the interactions are temporarily switched off, one would find a number of non-interacting fluids.
 	Although this is an unphysical situation, we \emph{define} the current as the quantity which would
         become the number density current in the non-interacting limit.
-	In the normal, interacting regime this current, very vaguely, describes the number density
-	of both quarks and gluons of a particular colour
-	(of course taking into account the fact that gluons carry the ``adjoint'' colour).
 
-	We define
+	Again in analogy to [{\it ref}] we define
 \beq
 \label{defna}
 	n^{\mu a}    ~~=~~    \epsilon^{\mu\nu\rho\sigma}\, \p_\nu X^\slashed{a}\, \p_\rho Y^\slashed{a}\, \p_\sigma Z^\slashed{a}\,,
@@ -595,10 +610,35 @@ $^b${\it Theoretical Physics Department, St.Petersburg State University, Ulyanov
 	It is important to recognize that \eqref{defna} is \emph{not} a chromomagnetic current,
         because the latter one would only be conserved covariantly.
 	We are not specifically concerned about the expression for the chromomagnetic current.
-	Its form can be found from the Maxwell equation
+	Its form can be found from the non-Abelian Maxwell equation
 \beq
+\label{na_maxwell}
 	\md^\text{A}_\mu\, G^{\mu\nu}     ~~=~~    j^\nu\,.
 \eeq
+
+	One example context where Abelian currents $ n^a_\mu $ may exist is a ``gluon-wave'' in a slow heavy-quark regime.
+        Although strong interactions are short-ranged, there may exist a regime in which quarks are quasi-stationary
+        and rapidly exchanging with gluons, therefore enabling the transfer of colour.
+        One can imagine this to occur in a plasma of slow heavy quarks.
+        In order for the interactions to be in the weakly coupled mode, the typical transferred momentum needs to be sufficiently high.
+
+        The necessity to consider heavy quarks comes from the fact that this ``lattice'' of quarks needs
+        to be largely stable despite their constant exchange with gluons.
+        In terms of the currents, we can view this as follows.
+        Let us split the left hand side of the Maxwell equation \eqref{na_maxwell} into two parts
+\beq
+	\md^\text{A}_\mu\, G^{\mu\nu}    ~~=~~    \p_\lambda\, G^{\lambda\mu}  ~~+~~  [\, A_\lambda\, G^{\lambda\mu} \,]
+\eeq
+	and, interpreting the second term as the ``gluon current'', move it to the right hand side.
+        The resulting current
+\beq
+\label{ex_current}
+	n^\mu    ~~=~~    \p_\lambda\, G^{\lambda\mu}    ~~=~~    j^\mu  ~~-~~  [\, A_\lambda\, G^{\lambda\mu} \,]
+\eeq
+	is Abelian and explicitly conserved.
+	Because quarks are heavy, $ \vec j ~\simeq~ 0 $ and the current would be dominated by the gluons.
+	The net charge density of quarks $ j^0 $ may still contribute to the charge density of $ n^\mu $.
+        Note that this current certainly cannot be interpreted as flow of any number density.
 
 
 
