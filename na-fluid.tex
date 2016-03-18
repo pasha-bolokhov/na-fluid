@@ -649,15 +649,19 @@ $^b${\it Theoretical Physics Department, St.Petersburg State University, Ulyanov
 %                                                                              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Tree-level energy momentum tensor}
-	In the Abelian plasma, the field strength $ F^{\mu\nu} $ happens to be a bivector,
+	We now again assume that the Lagrangian is a generic function of $ n^2 $ and $ \varphi^2 $,
+\beq
+	\mc{L}    ~~=~~    -\, f( n^2, \varphi^2 )\,.
+\eeq
+	In the Abelian string-fluid plasma, the field strength $ F^{\mu\nu} $ happens to be a bivector,
 	which helps a lot in understanding the structure of the energy-momentum tensor.
 	In our case, the field strength \eqref{Ga} obviously is not a bivector, but
-	if we make a perturbative expansion, we can treat it as such.
+	if we make a perturbative expansion, it will approximately be such.
 	
 	In order to make a perturbative expansion, one normally redefines $ A^\mu ~\to~ g A^\mu $
-	while at the same time $ G^{\mu\nu} ~\to~ g^{-1} G^{\mu\nu} $.
+	while at the same time rescaling $ G^{\mu\nu} ~\to~ g^{-1} G^{\mu\nu} $.
 	We prefer not to do this explicitly, while keeping in mind that each additional power of $ X $ or $ Y $
-	carries an extra power of the coupling constant.
+	carries an extra half a power of the coupling constant.
 
 	Then the "tree-level" field strength happens to be a bivector,
 \beq
@@ -690,9 +694,12 @@ $^b${\it Theoretical Physics Department, St.Petersburg State University, Ulyanov
 	\qquad\qquad
 	( q_\mu^\slashed a )^2    ~~=~~    1\,.
 \eeq
-	The expansion in the coupling constant $ g $ will correspond to an expansion in the (even) powers of $ q_\mu^a $.
-
-	Using expansion \eqref{G-pert} we find
+	Even though vectors $ q_\mu^a $ are not suppressed by the coupling constant (they have a unitary length),
+        the only source they appear from
+        in the energy-momentum tensor is field strength \eqref{G-pert}, via the commutator, which \emph{is} suppressed.
+	So the expansion in coupling constant $ g $ will correspond to an expansion in (even) powers of $ q_\mu^a $.
+        
+	Utilizing expression \eqref{G-pert} we find
 \begin{align}
 %
 \notag
@@ -748,6 +755,7 @@ $^b${\it Theoretical Physics Department, St.Petersburg State University, Ulyanov
 \end{align}
 	Here we have denoted the "tree-level" $ \varphi $ as $ \varphi_{(0)} $\,
 \beq
+\label{def_phi0}
 	\varphi_{(0)}    ~~=~~    \sqrt{ (\varphi^a)^2 }\,.
 \eeq
 	We can imagine that this hydrodynamic limit is reached in the regime of a very weak coupling.
@@ -770,17 +778,13 @@ $^b${\it Theoretical Physics Department, St.Petersburg State University, Ulyanov
 	Again, here the upper sign of $ \pm $ corresponds to Euclidean space, and the lower sign to Minkowski space.
 
 	Equation \eqref{tree-tensor} can now be complemented with the contribution of the Abelian currents \eqref{defna}.
-	Now we assume that the Lagrangian is a generic function of $ n^2 $ and $ \varphi^2 $,
-\beq
-	\mc{L}    ~~=~~    -\, f( n^2, \varphi^2 )\,.
-\eeq
 	Taking into account the fact that \eqref{defna} is a pseudo-vector, the overall energy-momentum tensor reads,
 \begin{align}
 %
 \notag
-	T_\text{gluon}^{\mu\nu}    &
+	T_\text{fluid}^{\mu\nu}    &
 					~~=~~
-						\bigl\lgroup 2\, f_{n^2}^\prime (n^a)^2  ~+~
+						\bigl\lgroup 2\, f_{n^2}^\prime \bigg|_{\varphi_{(0)}} (n^a)^2  ~+~
         					2\, f^\prime_{\varphi^2} \bigg|_{\varphi_{(0)}}\, (\varphi^a)^2 \bigr\rgroup
 						u^{a\mu}\, u^{a\nu}
 					~~\pm~~
@@ -806,6 +810,51 @@ $^b${\it Theoretical Physics Department, St.Petersburg State University, Ulyanov
 	Notably, expression \eqref{Ttotal} has the same form as \eqref{TCHD} --- except for the presence
 	of the anisotropic term due to $ w^{a\mu} $, and for a more specific form of $ G_{\mu\nu}^a $
 	in terms of $ u^{\mu a} $.
+
+
+        We now briefly discuss the large-$ N $ limit of energy-momentum tensor \eqref{Ttotal}.
+        The vector structure of the tensor gets simplified.
+        Since velocity vectors $ u^{a \mu} $ are time-like, they will dominantly will add up
+        as we are summing in index $ a $.
+        In other words, in the absence of cross-correlations, by averaging in $ a $, 
+        we are extracting a time-like component from all of $ u^{a \mu} $,
+\beq
+	\langle u^{a \mu} \rangle    ~~=~~    U^\mu\,.
+\eeq
+	On the other hand, vectors $ w^{a \mu} $ are space-like, and therefore, when summed up in $ a $,
+        they will just perform a random walk.
+        Even though the length of a random walk is $ \sqrt{N} $,
+        the average of individual components of a vector is zero.
+        Taking into account that
+\begin{align}
+	\langle (n^a)^2 \rangle    & ~~=~~    \frac{1}{N}\,n^2\,,
+        &
+        \langle (\varphi^a)^2 \rangle     & ~~=~~    \frac{1}{N}\, (\phi_{(0)})^2\,,
+\end{align}
+        the tree-level energy-momentum tensor at large $ N $ therefore has the following structure
+\begin{align}
+%
+\notag
+	T_\text{large-$ N $}^{\mu\nu}    &
+					~~=~~
+					\lgr
+						2\, f_{n^2}^\prime n^2 ~+~ 2\, f^\prime_{\varphi^2}\, \varphi^2
+					\rgr \bigg|_{\varphi_{(0)}}
+					U^{\mu}\, U^{\nu}
+					~~-~~
+	\\[2mm]
+%
+\notag
+	& 
+					~~-~~
+					g^{\mu\nu} \lgr
+						2\, f_{n^2}^\prime n^2 ~+~ 2\, f^\prime_{\varphi^2}\, \varphi^2
+						~-~ f
+					\rgr \bigg|_{\varphi_{(0)}}
+					~~+~~
+					O\big(\, q^2 \,\big)\,.
+\end{align}
+	This is a single-component fluid with an explicit expression for pressure and with energy density equal to $ f $.
 
 
 
